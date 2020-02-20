@@ -49,4 +49,15 @@
     <a href="facts.html" style="background-color: #51180C;" target="_blank"><span>Facts</span></a>
     <a href="dailyRoutine.html" style="background-color: #5C70C8;" target="_blank"><span>Daily Routine</span></a>
     <a href="whatIf.html" style="background-color: #60E45F;" target="_blank"><span>What If?</span></a>
+    <script>
+        alert("A window will now open for each set of cards");
+        var fwin = window.open("facts.html", "_blank");
+        var dwin = window.open("dailyRoutine.html", "_blank");
+        var wwin = window.open("whatIf.html", "_blank");
+
+        if ((!fwin || fwin.closed || typeof fwin.closed == 'undefined') || (!dwin || dwin.closed || typeof dwin.closed == 'undefined') || (!wwin || wwin.closed || typeof wwin.closed == 'undefined')){
+            alert("Please enable pop ups to automatically open a window for each set of cards\nOr you can click each link once yourselves");
+        }
+
+    </script>
 </body></html>
