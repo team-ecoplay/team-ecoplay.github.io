@@ -1,0 +1,24 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Daily Routine</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        var texts = ["Wake up in an environmentally friendly way", "Shower", "Walk to school"];
+
+        function getText() {
+            document.getElementById("cardText").innerHTML = texts[Math.floor(Math.random() * texts.length)];
+        }
+    </script>
+</head>
+
+<body>
+    <div id="card" style="background-color: #60E45F;">
+        <span id="cardText"></span>
+    </div>
+    <span id="topText">Please write down this daily routine before you generate a new one</span>
+    <script>
+        getText();
+    </script>
+</body></html>
