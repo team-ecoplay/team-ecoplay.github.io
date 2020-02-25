@@ -25,9 +25,9 @@
         
         function answer(option) {
             if (option == texts[index][3]) {
-                alert("You're right");
+                alert("You're right, you gain 5 EcoPoints!");
             } else {
-                alert("You're wrong");
+                alert("You're wrong, you lose 5 EcoPoints.");
             }
         }
 
@@ -48,7 +48,7 @@
 </head>
 
 <body>
-    <span id="topText">Please write down this what if? before you generate a new one. Tap on the card to generate a new one.</span>
+    <span id="topText">Tap on the card to generate a new one.</span>
     <div id="cardContainer" onclick="getText();">
         <div id="card" style="background-color: #0F70B7;">
             <span id="cardText"></span>
