@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Facts</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        var texts = {
+            "Easy": ["Did you know that, due to various human activities, 1 million species have vanished?", "Did you know that Climate Change could be irreversible by 2030?", "Did you know that a single car generates half a ton of carbon dioxide and a NASA space shuttle releases 28 tons of carbon dioxide?", "Did you know that it takes only 5 days for a jet stream in China to carry air pollution to the USA?", "Did you know that if we recycled all newspapers, 250 billion trees a year would be saved?", "Approximately 30,000 species per year are being driven to extinction. That's over three every hour!", "In the last 100 years, more than 50 species of animals have died off because of our impact on the globe.", "1 in 3 marine mammal species get found entangled in litter.", "12,000 to 14,000 tonnes of plastic are ingested by North Pacific fish yearly.", "The International Organisation on Migration estimates that up to 200 million people could be displaced due to climate change by 2050.", "One quarter of the Earth’s surface — land that could feed 1.5 billion people — has already been lost to erosion, deforestation, and poor farming techniques. Leaving us only 60 years of harvests before the world’s soils can no longer support life.", "Nearly 80% of the world’s fish stocks are fully exploited, over-exploited, depleted or in a state of collapse. The world’s oceans could be emptied of fish by 2048.", "Americans buy more than 29 million water bottles every year. Only 13% of these bottles are recycled.", "40% of the world’s insect species are currently at risk, threatening the planet’s ecosystems and crops.", "The Earth has experienced only above-average global temperatures since 1977.", "The atmospheric carbon dioxide level for 2019 was 46% higher than before the Industrial Revolution.", "Global warming has caused over 3 trillion tonnes of ice to melt in Antarctica over the past quarter century.", "Around 50% of all carbon emissions are emitted by the richest 10% of the world’s population.", "It is believed that the weight of rubbish in the oceans will surpass the weight of actual fish by 2050.", "Half of the world’s coral reefs have died in the last 30 years,  and two thirds of the Great Barrier Reef have been damaged by coral bleaching.", "At current rates of deforestation, Earth’s rainforests could be completely gone in 100 years.", "Wildlife habitats in the world is being destroyed at a rate of ~5,760 acres per day that's ~240 acres per hour.", "8 million tons of plastic enter the ocean every year! If waste management practices don't improve, scientists predict this could increase tenfold by 2025.", "120,000 square kilometers of tropical forest were lost in 2", "8.3 million tonnes of plastic are discarded in the sea yearly. 236,000 tonnes of which are ingestible micro-plastics that marine creatures mistake for food."],
+            "Hard": ["Speed of light is 3 x 10^8 meters per second", "Fractals are infinitely recursive shapes", "The sky is blue due to the shorter wavelength of blue light"]
+        };
+        var alreadyCalledIndices = [];
+
+        function getText(difficulty = "Hard") {
+            if (alreadyCalledIndices.length == texts[difficulty].length) {
+                alert("All the cards have been picked. Starting again");
+                alreadyCalledIndices = [];
+            }
+            var index;
+            do {
+                index = Math.floor(Math.random() * texts[difficulty].length);
+            } while (alreadyCalledIndices.includes(index))
+            document.getElementById("cardText").innerHTML = texts[difficulty][index];
+            alreadyCalledIndices.push(index);
+        }
+
+        function adjustSize() {
+            var cardContainerHeight = window.innerHeight * 0.75;
+            var cardContainerMarginTop = window.innerHeight * 0.1;
+            var buttonContainerHeight = window.innerHeight * 0.1;
+            var cardContainer = document.getElementById("cardContainer");
+            cardContainer.style.height = cardContainerHeight + "px";
+            cardContainer.style.marginTop = cardContainerMarginTop + "px";
+            var card = document.getElementById("card");
+            card.style.height = cardContainerHeight + "px";
+            var buttonContainer = document.getElementById("buttonContainer");
+            buttonContainer.style.height = buttonContainerHeight + "px";
+            buttonContainer.style.marginTop = (window.innerHeight - (cardContainerMarginTop + cardContainerHeight) - buttonContainerHeight) / 2 + "px";
+        }
+
+    </script>
+</head>
+
+<body onresize="adjustSize();">
+    <span id="topText">Please write down this fact before you generate a new one</span>
+    <div id="cardContainer">
+        <div id="card" style="background-color: #F12A17;">
+            <span id="cardText"></span>
+        </div>
+    </div>
+    <div id="buttonContainer">
+        <button onclick="getText('Hard');">Easy</button>
+        <button onclick="getText('Hard');">Hard</button>
+    </div>
+    <script>
+        adjustSize();
+        getText();
+
+    </script>
+</body>
+
+</html>

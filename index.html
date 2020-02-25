@@ -1,0 +1,41 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>EcoBoard Cards</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        function adjustSize() {
+            var logoImageDimensions = [2560, 1440];
+            var maxLogoHeight = window.innerHeight * 0.15;
+            var logoWidth = Math.min(window.innerWidth, maxLogoHeight / logoImageDimensions[1] * logoImageDimensions[0]);
+            var logoHeight = logoWidth / logoImageDimensions[0] * logoImageDimensions[1];
+            var containerHeight = window.innerHeight * 0.8;
+            var containerMarginTop = window.innerHeight * 0.15;
+            var linkHeight = containerHeight * 0.3;
+            var logo = document.getElementById("logo");
+            logo.style.width = logoWidth + "px";
+            logo.style.height = logoHeight + "px";
+            logo.style.marginTop = (containerMarginTop - logoHeight) / 2 + "px";
+            var linkContainer = document.getElementById("linkContainer");
+            linkContainer.style.height = containerHeight + "px";
+            linkContainer.style.marginTop = logo.style.marginTop;
+            var links = document.getElementsByTagName("a");
+            for (var link of links) {
+                link.style.height = linkHeight + "px";
+            }
+        }
+    </script>
+</head>
+
+<body onresize="adjustSize();">
+    <img id="logo" src="logo.gif">
+    <div id="linkContainer" style="position: relative;">
+        <a href="facts.html" style="background-color: #F12A17; top: 0; transform: translate(-50%, 0);" target="_blank"><span>Facts</span></a>
+        <a href="dailyRoutine.html" style="background-color: #0F70B7; top: 50%; transform: translate(-50%, -50%);" target="_blank"><span>Daily Routine</span></a>
+        <a href="whatIf.html" style="background-color: #60E45F; top: 100%; transform: translate(-50%, -100%);" target="_blank"><span>What If?</span></a>
+    </div>
+    <script>
+        adjustSize();
+    </script>
+</body></html>

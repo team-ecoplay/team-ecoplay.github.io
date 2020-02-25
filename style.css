@@ -1,0 +1,89 @@
+* {
+	left: 0px;
+	top: 0px;
+	margin: 0;
+    padding: 0;
+	outline: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+    -webkit-text-size-adjust: 100%;
+	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	color: white;
+}
+
+::selection {
+	color: none;
+	background: none;
+}
+
+body {
+	text-align: center;
+	background-color: #0C1812;
+}
+        
+a {
+	position: absolute;
+	display: block;
+	width: 60%;
+    left: 50%;
+	text-decoration: none;
+	font-size: 40px;
+	border: 5px solid white;
+}
+
+a span {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+    width: 100%;
+	transform: translate(-50%, -50%);
+}
+
+#topText {
+	position: fixed;
+	width: 100%;
+	font-size: 32px;
+	line-height: 30px;
+}
+
+#cardContainer {
+	position: relative;
+	width: 90%;
+    margin: auto;
+}
+
+#card {
+	border: 5px solid white;
+}
+
+#card.largeButtons {
+    
+}
+
+#cardText {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	text-align: center;
+	font-size: 40px;
+	width: 100%;
+	transform: translate(-50%, -50%);
+}
+
+button {
+	float: left;
+	width: 40%;
+	margin: 0 5%;
+	height: 100%;
+	background-color: #27995E;
+	border: 5px solid white;
+	font-size: 45px;
+}
+
+button:active {
+	background-color: skyblue;
+}

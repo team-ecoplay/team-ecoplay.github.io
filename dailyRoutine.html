@@ -1,0 +1,47 @@
+<!Doctype html>
+<html>
+
+<head>
+    <title>Daily Routine</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script>
+        var texts = ["You showered", "You charged your phone", "You left the lights on", "You drove to work", "You used aerosol deodorant", "You put your litter in the bin!", "You took your own bag to go shopping!", "You used a re-usable water bottle!", "You walked to your destination instead of going by car!", "You purchased bar soap instead of liquid soap in a plastic bottle!", "You bought food from a local market!", "You planted some trees!", "You carpooled!", "You donated to a food kitchen!", "You created a compost pile!", "You used non-toxic cleaning prodicts!", "You chose the vegetarian option!", "You chose the vegan food option!", "You turned off the tap whilst brushing your teeth!", "You chose a snack with no palm oil!"];
+        var alreadyCalledIndices = [];
+
+        function getText() {
+            if (alreadyCalledIndices.length == texts.length) {
+                alert("All the cards have been picked. Starting again");
+                alreadyCalledIndices = [];
+            }
+            var index;
+            do {
+                index = Math.floor(Math.random() * texts.length);
+            } while (alreadyCalledIndices.includes(index))
+            document.getElementById("cardText").innerHTML = texts[index];
+            alreadyCalledIndices.push(index);
+        }
+
+        function adjustSize() {
+            var cardContainerHeight = window.innerHeight * 0.85;
+            var cardContainerMarginTop = window.innerHeight * 0.1;
+            var cardContainer = document.getElementById("cardContainer");
+            cardContainer.style.height = cardContainerHeight + "px";
+            cardContainer.style.marginTop = cardContainerMarginTop + "px";
+            var card = document.getElementById("card");
+            card.style.height = cardContainerHeight + "px";
+        }
+    </script>
+</head>
+
+<body onresize="adjustSize();">
+    <span id="topText">Please write down this daily routine before you generate a new one</span>
+    <div id="cardContainer">
+        <div id="card" style="background-color: #60E45F;">
+            <span id="cardText"></span>
+        </div>
+    </div>
+    <script>
+        adjustSize();
+        getText();
+    </script>
+</body></html>
