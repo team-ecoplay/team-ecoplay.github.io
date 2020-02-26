@@ -18,8 +18,11 @@
                 index = Math.floor(Math.random() * texts.length);
             } while (alreadyCalledIndices.includes(index))
             document.getElementById("cardText").innerHTML = texts[index][0];
-            document.getElementById("buttonContainer").children[0].innerHTML = texts[index][1];
-            document.getElementById("buttonContainer").children[1].innerHTML = texts[index][2];
+            var buttons = document.getElementById("buttonContainer").children;
+            buttons[0].style.visibility = "visible";
+            buttons[0].innerHTML = texts[index][1];
+            buttons[1].style.visibility = "visible";
+            buttons[1].innerHTML = texts[index][2];
             alreadyCalledIndices.push(index);
         }
         
@@ -29,6 +32,9 @@
             } else {
                 alert("You're wrong, you lose 5 EcoPoints.");
             }
+            var buttons = document.getElementById("buttonContainer").children;
+            buttons[0].style.visibility = "hidden";
+            buttons[1].style.visibility = "hidden";
         }
 
         function adjustSize() {
