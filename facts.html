@@ -3,7 +3,6 @@
 
 <head>
     <title>Facts</title>
-    <meta name="viewport"  content="initial-scale=2.0,width=device-width"/>
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
         var texts = {
@@ -14,7 +13,7 @@
 
         function getText(difficulty = "Easy") {
             if (alreadyCalledIndices.length == texts[difficulty].length) {
-                alert("All the " + difficulty + " cards have been picked. Starting again");
+                alert("All the cards have been picked. Starting again");
                 alreadyCalledIndices[difficulty] = [];
             }
             var index;
