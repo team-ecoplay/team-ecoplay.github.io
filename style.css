@@ -10,7 +10,6 @@
 	-moz-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-    -webkit-text-size-adjust: 100%;
 	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
 	color: white;
 }
@@ -18,6 +17,10 @@
 ::selection {
 	color: none;
 	background: none;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
 }
 
 body {
