@@ -3,6 +3,7 @@
 
 <head>
     <title>Facts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
         var texts = {
@@ -13,7 +14,7 @@
 
         function getText(difficulty = "Easy") {
             if (alreadyCalledIndices.length == texts[difficulty].length) {
-                alert("All the cards have been picked. Starting again");
+                alert("All the " + difficulty + " cards have been picked. Starting again");
                 alreadyCalledIndices[difficulty] = [];
             }
             var index;
@@ -25,9 +26,9 @@
         }
 
         function adjustSize() {
-            var cardContainerHeight = window.innerHeight * 0.75;
-            var cardContainerMarginTop = window.innerHeight * 0.1;
-            var buttonContainerHeight = window.innerHeight * 0.1;
+            var cardContainerHeight = document.documentElement.clientHeight * 0.75;
+            var cardContainerMarginTop = document.documentElement.clientHeight * 0.1;
+            var buttonContainerHeight = document.documentElement.clientHeight * 0.1;
             var cardContainer = document.getElementById("cardContainer");
             cardContainer.style.height = cardContainerHeight + "px";
             cardContainer.style.marginTop = cardContainerMarginTop + "px";
@@ -35,7 +36,7 @@
             card.style.height = cardContainerHeight + "px";
             var buttonContainer = document.getElementById("buttonContainer");
             buttonContainer.style.height = buttonContainerHeight + "px";
-            buttonContainer.style.marginTop = (window.innerHeight - (cardContainerMarginTop + cardContainerHeight) - buttonContainerHeight) / 2 + "px";
+            buttonContainer.style.marginTop = (document.documentElement.clientHeight - (cardContainerMarginTop + cardContainerHeight) - buttonContainerHeight) / 2 + "px";
         }
 
     </script>

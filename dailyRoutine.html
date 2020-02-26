@@ -3,6 +3,7 @@
 
 <head>
     <title>Daily Routine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
         var texts = ["You showered. You gain 5 EcoPoints.", "You charged your phone. You gain 5 EcoPoints.", "You left the lights on. You lose 5 EcoPoints.", "You drove to work. You lose 5 EcoPoints.", "You used aerosol deodorant. You lose 5 EcoPoints.", "You put your litter in the bin. You gain 5 EcoPoints.", "You took your own bag to go shopping. You gain 5 EcoPoints.", "You used a re-usable water bottle. You gain 5 EcoPoints.", "You walked to your destination instead of going by car. You gain 5 EcoPoints.", "You purchased bar soap instead of liquid soap in a plastic bottle. You gain 5 EcoPoints.", "You bought food from a local market. You gain 5 EcoPoints.", "You planted some trees. You gain 5 EcoPoints.", "You carpooled. You gain 5 EcoPoints.", "You donated to a food kitchen. You gain 5 EcoPoints.", "You created a compost pile. You gain 5 EcoPoints.", "You used non-toxic cleaning products. You gain 5 EcoPoints.", "You chose the vegetarian option. You gain 5 EcoPoints.", "You chose the vegan food option. You gain 5 EcoPoints.", "You turned off the tap whilst brushing your teeth. You gain 5 EcoPoints.", "You chose a snack with no palm oil. You gain 5 EcoPoints."];
@@ -22,8 +23,8 @@
         }
 
         function adjustSize() {
-            var cardContainerHeight = window.innerHeight * 0.85;
-            var cardContainerMarginTop = window.innerHeight * 0.1;
+            var cardContainerHeight = document.documentElement.clientHeight * 0.85;
+            var cardContainerMarginTop = document.documentElement.clientHeight * 0.1;
             var cardContainer = document.getElementById("cardContainer");
             cardContainer.style.height = cardContainerHeight + "px";
             cardContainer.style.marginTop = cardContainerMarginTop + "px";

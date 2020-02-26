@@ -3,15 +3,16 @@
 
 <head>
     <title>EcoBoard Cards</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script>
         function adjustSize() {
             var logoImageDimensions = [2560, 1440];
-            var maxLogoHeight = window.innerHeight * 0.15;
+            var maxLogoHeight = document.documentElement.clientHeight * 0.15;
             var logoWidth = Math.min(window.innerWidth, maxLogoHeight / logoImageDimensions[1] * logoImageDimensions[0]);
             var logoHeight = logoWidth / logoImageDimensions[0] * logoImageDimensions[1];
-            var containerHeight = window.innerHeight * 0.8;
-            var containerMarginTop = window.innerHeight * 0.15;
+            var containerHeight = document.documentElement.clientHeight * 0.8;
+            var containerMarginTop = document.documentElement.clientHeight * 0.15;
             var linkHeight = containerHeight * 0.3;
             var logo = document.getElementById("logo");
             logo.style.width = logoWidth + "px";

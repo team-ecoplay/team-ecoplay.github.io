@@ -3,6 +3,7 @@
 
 <head>
     <title>What If?</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="style.css">
     <script>
         var texts = [["You want to have some coffee do you:", "use a paper cup they have", "take your own reusable cup", "b"], ["You are about to go grocery shopping do you:", "use the plastic carrier bags they have there", "take your own bag", "b"], ["You want to relax after a long day at school do you:", "have a bath", "have a shower", "b"], ["You’re choosing what to have for lunch do you:", "go for the vegetarian option", "go for the non vegetarian option", "a"], ["You need to get to a friends birthday party. Do you:", "carpool with another friend", "ask your parent to drop you", "a"]];
@@ -38,9 +39,9 @@
         }
 
         function adjustSize() {
-            var cardContainerHeight = window.innerHeight * 0.5;
-            var cardContainerMarginTop = window.innerHeight * 0.1;
-            var buttonContainerHeight = window.innerHeight * 0.3;
+            var cardContainerHeight = document.documentElement.clientHeight * 0.5;
+            var cardContainerMarginTop = document.documentElement.clientHeight * 0.1;
+            var buttonContainerHeight = document.documentElement.clientHeight * 0.3;
             var cardContainer = document.getElementById("cardContainer");
             cardContainer.style.height = cardContainerHeight + "px";
             cardContainer.style.marginTop = cardContainerMarginTop + "px";
@@ -48,7 +49,7 @@
             card.style.height = cardContainerHeight + "px";
             var buttonContainer = document.getElementById("buttonContainer");
             buttonContainer.style.height = buttonContainerHeight + "px";
-            buttonContainer.style.marginTop = (window.innerHeight - (cardContainerMarginTop + cardContainerHeight) - buttonContainerHeight) / 2 + "px";
+            buttonContainer.style.marginTop = (document.documentElement.clientHeight - (cardContainerMarginTop + cardContainerHeight) - buttonContainerHeight) / 2 + "px";
         }
     </script>
 </head>
@@ -61,8 +62,8 @@
         </div>
     </div>
     <div id="buttonContainer">
-        <button onclick="answer('a');">Easy</button>
-        <button onclick="answer('b');">Hard</button>
+        <button onclick="answer('a');"></button>
+        <button onclick="answer('b');"></button>
     </div>
     <script>
         adjustSize();
