@@ -13,13 +13,10 @@
         var alreadyCalledIndices = {"Easy": [], "Hard": []};
 
         function getText(difficulty = "Easy") {
-            if (alreadyCalledIndices.length == texts[difficulty].length) {
+            if (alreadyCalledIndices[difficulty].length == texts[difficulty].length) {
                 alert("All the " + difficulty + " cards have been picked. Starting again");
                 alreadyCalledIndices[difficulty] = [];
             }
-            console.log(alreadyCalledIndices['Easy'].length);
-            console.log(texts['Easy'].length);
-            console.log(alreadyCalledIndices['Easy'].length == texts['Easy'].length);
             var index;
             do {
                 index = Math.floor(Math.random() * texts[difficulty].length);
